@@ -28,4 +28,18 @@
 | 5        | ABC         | 50              |
 | 5        | NUR         | 35              |
 
-These tables are now formatted nicely for Markdown.
+
+2) Implement a check constraint for (5)
+- &nbsp;&nbsp;&nbsp;&nbsp; start date and end date
+- &nbsp;&nbsp;&nbsp;&nbsp; no_ of participant should be two digit number
+
+3)  Answer the following __queries__ (15)<br>
+a) *Arrange* the event table entries in decreasing order based on duration.<br>
+b) Display *average* participants who have attended the event of the artist ‘Nur’.<br>
+c) Display event id which has *maximum* no. of participant of the artist ‘Jr. KG’.<br>
+d) Get artist id who have performed *at least* three events <br>
+e) Get event id who have performed the events on same *date* <br>
+
+4) Write a __procedure__ to accept start date and end date of event as inputs and print event id in ascending order which are conducted during those dates. (10)  
+
+5) Write a __trigger__ that is fired after an insert statement is executed for the event table. The trigger writes the event_id, Event_Name, Start_Date, End_Date and Duration (in days) (10)
