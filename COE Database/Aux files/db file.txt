@@ -1,0 +1,162 @@
+Server [localhost]
+Database [postgres]
+Port [5432]
+Username [postgres] postgres
+Password for user postgres
+psql (15.3)
+WARNING Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page Notes for Windows users for details.
+Type help for help.
+
+postgres=# create user abd with createdb password 'abd';
+CREATE ROLE
+postgres=# c template1 abd
+Password for user abd
+You are now connected to database template1 as user abd.
+template1= create db bpsimple
+template1- ;
+ERROR  syntax error at or near db
+LINE 1 create db bpsimple
+               ^
+template1= create database coe;
+CREATE DATABASE
+template1= c coe abd;
+You are now connected to database coe as user abd.
+coe= create table Student(Rollno integer not null, name varchar(15), Dob data, Gender char(6), Doa date, Bcode integer not null constraint student_pk PRIMARY KEY(Rollno));
+ERROR  syntax error at or near (
+LINE 1 ...integer not null constraint student_pk PRIMARY KEY(Rollno));
+                                                             ^
+coe= create table Student(Rollno serial, name varchar(15) not null, Dob data, Gender char(6), Doa date, Bcode integer not null, constraint student_pk PRIMARY KEY(Rollno));
+ERROR  type data does not exist
+LINE 1 ...ent(Rollno serial, name varchar(15) not null, Dob data, Gend...
+                                                             ^
+coe= create table Student(Rollno serial, name varchar(15) not null, Dob date, Gender char(6), Doa date, Bcode integer not null, constraint student_pk PRIMARY KEY(Rollno));
+CREATE TABLE
+coe= create table Branch(Bcode serial, Bname varchar(15) not null, Doa integer, constraint branch_pk PRIMARY KEY(Bcode));
+CREATE TABLE
+coe= dt
+        List of relations
+ Schema   Name    Type   Owner
+--------+---------+-------+-------
+ public  branch   table  abd
+ public  student  table  abd
+(2 rows)
+
+
+coe= create table Department(Dno serial, Dname varchar(15) not null, constraint department_pk PRIMARY KEY(Dno));
+CREATE TABLE
+coe= create table Course(Ccode serial, Cname varchar(15) not null, Credits integer, Dno integer, constraint course_pk PRIMARY KEY(Ccode));
+CREATE TABLE
+coe= create table Branch_Course(Bcode integer, Ccode integer,Semester varchar(15), constraint branch_course_pk PRIMARY KEY(Bcode, Ccode));
+CREATE TABLE
+coe= create table Enrolls(Rollno integer, Ccode integer,SESS varchar(15), Grade varchar(2), constraint branch_course_pk PRIMARY KEY(Bcode, Ccode)),constraint check(SESS == APRIL 2013 or SESS == NOV 2013), constraint check(Grade ==S or Grade == A or Grade ==B or Grade == C or Grade == D or Grade E or Grade == U);
+ERROR  syntax error at or near ,
+LINE 1 ...traint branch_course_pk PRIMARY KEY(Bcode, Ccode)),constrain...
+                                                             ^
+coe= create table Enrolls(Rollno integer, Ccode integer,SESS varchar(15), Grade varchar(2), constraint branch_course_pk PRIMARY KEY(Bcode, Ccode)),constraint cs1 check(SESS == APRIL 2013 or SESS == NOV 2013), constraint cs2 check(Grade ==S or Grade == A or Grade ==B or Grade == C or Grade == D or Grade E or Grade == U);
+ERROR  syntax error at or near ,
+LINE 1 ...traint branch_course_pk PRIMARY KEY(Bcode, Ccode)),constrain...
+                                                             ^
+coe= create table Enrolls(Rollno integer, Ccode integer,SESS varchar(15), Grade varchar(2), constraint branch_course_pk PRIMARY KEY(Bcode, Ccode),constraint cs1 check(SESS == APRIL 2013 or SESS == NOV 2013), constraint cs2 check(Grade ==S or Grade == A or Grade ==B or Grade == C or Grade == D or Grade E or Grade == U));
+ERROR  syntax error at or near E
+LINE 1 ...de ==B or Grade == C or Grade == D or Grade E or Gra...
+                                                             ^
+coe= create table Enrolls(Rollno integer, Ccode integer,SESS varchar(15), Grade varchar(2), constraint branch_course_pk PRIMARY KEY(Bcode, Ccode),constraint cs1 check(SESS == APRIL 2013 or SESS == NOV 2013), constraint cs2 check(Grade ==S or Grade == A or Grade ==B or Grade == C or Grade == D or Grade == E or Grade == U));
+ERROR  column bcode named in key does not exist
+LINE 1 ...Ccode integer,SESS varchar(15), Grade varchar(2), constraint...
+                                                             ^
+coe= create table Enrolls(Rollno integer, Ccode integer,SESS varchar(15), Grade varchar(2), constraint branch_course_pk PRIMARY KEY(Rollno, Ccode, SESS),constraint cs1 check(SESS == APRIL 2013 or SESS == NOV 2013), constraint cs2 check(Grade ==S or Grade == A or Grade ==B or Grade == C or Grade == D or Grade == E or Grade == U));
+ERROR  column APRIL 2013 does not exist
+LINE 1 ...Rollno, Ccode, SESS),constraint cs1 check(SESS == APRIL 201...
+                                                             ^
+coe= create table Enrolls(Rollno integer, Ccode integer,SESS varchar(15), Grade varchar(2), constraint branch_course_pk PRIMARY KEY(Rollno, Ccode, SESS),constraint cs1 check(SESS == 'APRIL 2013' or SESS == NOV 2013), constraint cs2 check(Grade ==S or Grade == A or Grade ==B or Grade == C or Grade == D or Grade == E or Grade == U));
+ERROR  operator does not exist character varying == unknown
+LINE 1 ...EY(Rollno, Ccode, SESS),constraint cs1 check(SESS == 'APRIL ...
+                                                             ^
+HINT  No operator matches the given name and argument types. You might need to add explicit type casts.
+coe= create table Enrolls(Rollno integer, Ccode integer,SESS varchar(15), Grade varchar(2), constraint branch_course_pk PRIMARY KEY(Rollno, Ccode, SESS),constraint cs1 check(SESS = 'APRIL 2013' or SESS == NOV 2013), constraint cs2 check(Grade ==S or Grade == A or Grade ==B or Grade == C or Grade == D or Grade == E or Grade == U));
+ERROR  column NOV 2013 does not exist
+LINE 1 ...nstraint cs1 check(SESS = 'APRIL 2013' or SESS == NOV 2013...
+                                                             ^
+coe= create table Enrolls(Rollno integer, Ccode integer,SESS varchar(15), Grade varchar(2), constraint branch_course_pk PRIMARY KEY(Rollno, Ccode, SESS),constraint cs1 check(SESS = 'APRIL 2013' or SESS == 'NOV 2013'), constraint cs2 check(Grade =='S' or Grade == 'A' or Grade =='B' or Grade == 'C' or Grade == 'D' or Grade == 'E' or Grade == 'U'));
+ERROR  operator does not exist character varying == unknown
+LINE 1 ...,constraint cs1 check(SESS = 'APRIL 2013' or SESS == 'NOV 20...
+                                                             ^
+HINT  No operator matches the given name and argument types. You might need to add explicit type casts.
+coe= create table Enrolls(Rollno integer, Ccode integer,SESS varchar(15), Grade varchar(2), constraint branch_course_pk PRIMARY KEY(Rollno, Ccode, SESS),constraint cs1 check(SESS = 'APRIL 2013' or SESS = 'NOV 2013'), constraint cs2 check(Grade ='S' or Grade = 'A' or Grade ='B' or Grade = 'C' or Grade = 'D' or Grade = 'E' or Grade = 'U'));
+ERROR  relation branch_course_pk already exists
+coe= create table Enrolls(Rollno integer, Ccode integer,SESS varchar(15), Grade varchar(2), constraint enrolls_pk PRIMARY KEY(Rollno, Ccode, SESS),constraint cs1 check(SESS = 'APRIL 2013' or SESS = 'NOV 2013'), constraint cs2 check(Grade ='S' or Grade = 'A' or Grade ='B' or Grade = 'C' or Grade = 'D' or Grade = 'E' or Grade = 'U'));
+CREATE TABLE
+coe= alter table Branch rename column doa to dno
+coe- ;
+ALTER TABLE
+coe= ALTER TABLE Student ADD CONSTRAINT cs3 CHECK(Gender ='M' OR Gender = 'F');
+ALTER TABLE
+coe= ALTER TABLE Student ADD CONSTRAINT cs3 UNIQUE(Doa);
+ERROR  constraint cs3 for relation student already exists
+coe= ALTER TABLE Student ADD CONSTRAINT cs4 UNIQUE(Doa);
+ALTER TABLE
+coe= INSERT INTO Department VALUES(CSE);
+ERROR  column CSE does not exist
+LINE 1 INSERT INTO Department VALUES(CSE);
+                                      ^
+coe= INSERT INTO Department VALUES(CSE);
+ERROR  column cse does not exist
+LINE 1 INSERT INTO Department VALUES(CSE);
+                                      ^
+coe= INSERT INTO Department(Dname) VALUES('CSE');
+INSERT 0 1
+coe= INSERT INTO Department(Dname) VALUES('IT');
+INSERT 0 1
+coe= INSERT INTO Department(Dname) VALUES('MECHANICAL');
+INSERT 0 1
+coe= INSERT INTO Department(Dname) VALUES('CIVIL');
+INSERT 0 1
+coe= INSERT INTO Department(Dname) VALUES('ECE');
+INSERT 0 1
+coe= select  from Department;
+ dno    dname
+-----+------------
+   1  CSE
+   2  IT
+   3  MECHANICAL
+   4  CIVIL
+   5  ECE
+(5 rows)
+
+
+coe= INSERT INTO Student((Rollno,name, Dob, Gender, Doa, Bcode) VALUES();
+coe( )
+coe- #
+coe- c coe abd
+You are now connected to database coe as user abd.
+coe- INSERT INTO Branch(Bname, Dno) VALUES('CSE','Software Engineering');
+ERROR  syntax error at or near Rollno
+LINE 1 INSERT INTO Student((Rollno,name, Dob, Gender, Doa, Bcode) V...
+                             ^
+coe= INSERT INTO Branch(Bname, Dno) VALUES('CSE','Software Engineering');
+ERROR  invalid input syntax for type integer Software Engineering
+LINE 1 INSERT INTO Branch(Bname, Dno) VALUES('CSE','Software Engine...
+                                                    ^
+coe= INSERT INTO Branch(Bname, Dno) VALUES('Software Engineering',1);
+ERROR  value too long for type character varying(15)
+coe= INSERT INTO Branch(Bname, Dno) VALUES('Software Engg',1);
+INSERT 0 1
+coe= INSERT INTO Branch(Bname, Dno) VALUES('AI',2);
+INSERT 0 1
+coe= INSERT INTO Branch(Bname, Dno) VALUES('Physics',3);
+INSERT 0 1
+coe= INSERT INTO Branch(Bname, Dno) VALUES('Survey',3);
+INSERT 0 1
+coe= INSERT INTO Branch(Bname, Dno) VALUES('Electronics',3);
+INSERT 0 1
+coe= INSERT INTO Branch(Bname, Dno) VALUES('Communications',5);
+INSERT 0 1
+coe= INSERT INTO Branch(Bname, Dno) VALUES('Construction',4);
+INSERT 0 1
+coe= INSERT INTO Course(Cname, Credits, Dno) VALUES('Software Project Management',3, 1);
+ERROR  value too long for type character varying(15)
+coe= INSERT INTO Course(Cname, Credits, Dno) VALUES('Proj Mgmt',3, 1);
+INSERT 0 1
+coe=

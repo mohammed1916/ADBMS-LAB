@@ -1,0 +1,309 @@
+postgres(> \c template1
+You are now connected to database "template1" as user "neil".
+template1(> \c bpsimple
+You are now connected to database "bpsimple" as user "neil".
+
+
+
+postgres(> \dt+
+                                       List of relations
+ Schema |   Name    | Type  |  Owner   | Persistence | Access method |    Size    | Description
+--------+-----------+-------+----------+-------------+---------------+------------+-------------
+ public | barcode   | table | postgres | permanent   | heap          | 8192 bytes |
+ public | customer  | table | postgres | permanent   | heap          | 8192 bytes |
+ public | item      | table | postgres | permanent   | heap          | 8192 bytes |
+ public | orderinfo | table | postgres | permanent   | heap          | 8192 bytes |
+ public | orderline | table | postgres | permanent   | heap          | 8192 bytes |
+ public | stock     | table | postgres | permanent   | heap          | 8192 bytes |
+(6 rows)
+
+
+
+bpsimple=> INSERT INTO customer(title, fname, lname, addressline, town, zipcode, phone) VALUES('Mr','Mohammed','Abdullah', '12 street','sample town', 'AAA B99', '000 1111' );
+INSERT 0 1
+
+
+bpsimple=> select * from customer;
+ customer_id | title |   fname   |  lname   |   addressline    |    town     |  zipcode   |  phone
+-------------+-------+-----------+----------+------------------+-------------+------------+----------
+           1 | Miss  | Jenny     | Stones   | 27 Rowan Avenue  | Hightown    | NT2 1AQ    | 023 9876
+           2 | Mr    | Andrew    | Stones   | 52 The Willows   | Lowtown     | LT5 7RA    | 876 3527
+           3 | Miss  | Alex      | Matthew  | 4 The Street     | Nicetown    | NT2 2TX    | 010 4567
+           4 | Mr    | Adrian    | Matthew  | The Barn         | Yuleville   | YV67 2WR   | 487 3871
+           5 | Mr    | Simon     | Cozens   | 7 Shady Lane     | Oakenham    | OA3 6QW    | 514 5926
+           6 | Mr    | Neil      | Matthew  | 5 Pasture Lane   | Nicetown    | NT3 7RT    | 267 1232
+           7 | Mr    | Richard   | Stones   | 34 Holly Way     | Bingham     | BG4 2WE    | 342 5982
+           8 | Mrs   | Ann       | Stones   | 34 Holly Way     | Bingham     | BG4 2WE    | 342 5982
+           9 | Mrs   | Christine | Hickman  | 36 Queen Street  | Histon      | HT3 5EM    | 342 5432
+          10 | Mr    | Mike      | Howard   | 86 Dysart Street | Tibsville   | TB3 7FG    | 505 5482
+          11 | Mr    | Dave      | Jones    | 54 Vale Rise     | Bingham     | BG3 8GD    | 342 8264
+          12 | Mr    | Richard   | Neill    | 42 Thatched Way  | Winnersby   | WB3 6GQ    | 505 6482
+          13 | Mrs   | Laura     | Hardy    | 73 Margarita Way | Oxbridge    | OX2 3HX    | 821 2335
+          14 | Mr    | Bill      | Neill    | 2 Beamer Street  | Welltown    | WT3 8GM    | 435 1234
+          15 | Mr    | David     | Hudson   | 4 The Square     | Milltown    | MT2 6RT    | 961 4526
+          16 | Mr    | Mohammed  | Abdullah | 12 street        | sample town | AAA B99    | 000 1111
+(16 rows)
+
+
+bpsimple=> select * from barcode;
+  barcode_ean  | item_id
+---------------+---------
+ 6241527836173 |       1
+ 6241574635234 |       2
+ 6264537836173 |       3
+ 6241527746363 |       3
+ 7465743843764 |       4
+ 3453458677628 |       5
+ 6434564564544 |       6
+ 8476736836876 |       7
+ 6241234586487 |       8
+ 9473625532534 |       8
+ 9473627464543 |       8
+ 4587263646878 |       9
+ 9879879837489 |      11
+ 2239872376872 |      11
+(14 rows)
+
+
+bpsimple=> select * from item;
+ item_id |  description  | cost_price | sell_price
+---------+---------------+------------+------------
+       1 | Wood Puzzle   |      15.23 |      21.95
+       2 | Rubik Cube    |       7.45 |      11.49
+       3 | Linux CD      |       1.99 |       2.49
+       4 | Tissues       |       2.11 |       3.99
+       5 | Picture Frame |       7.54 |       9.95
+       6 | Fan Small     |       9.23 |      15.75
+       7 | Fan Large     |      13.36 |      19.95
+       8 | Toothbrush    |       0.75 |       1.45
+       9 | Roman Coin    |       2.34 |       2.45
+      10 | Carrier Bag   |       0.01 |       0.00
+      11 | Speakers      |      19.73 |      25.32
+      12 | Wood Puzzle   |      15.23 |      21.95
+      13 | Rubik Cube    |       7.45 |      11.49
+      14 | Linux CD      |       1.99 |       2.49
+      15 | Tissues       |       2.11 |       3.99
+      16 | Picture Frame |       7.54 |       9.95
+      17 | Fan Small     |       9.23 |      15.75
+      18 | Fan Large     |      13.36 |      19.95
+      19 | Toothbrush    |       0.75 |       1.45
+      20 | Roman Coin    |       2.34 |       2.45
+      21 | Carrier Bag   |       0.01 |       0.00
+      22 | Speakers      |      19.73 |      25.32
+      23 | Wood Puzzle   |      15.23 |      21.95
+      24 | Rubik Cube    |       7.45 |      11.49
+      25 | Linux CD      |       1.99 |       2.49
+      26 | Tissues       |       2.11 |       3.99
+      27 | Picture Frame |       7.54 |       9.95
+      28 | Fan Small     |       9.23 |      15.75
+      29 | Fan Large     |      13.36 |      19.95
+      30 | Toothbrush    |       0.75 |       1.45
+      31 | Roman Coin    |       2.34 |       2.45
+      32 | Carrier Bag   |       0.01 |       0.00
+      33 | Speakers      |      19.73 |      25.32
+(33 rows)
+
+
+bpsimple=> select * from orderinfo;
+ orderinfo_id | customer_id | date_placed | date_shipped | shipping
+--------------+-------------+-------------+--------------+----------
+            1 |           3 | 2004-03-13  | 2004-03-17   |     2.99
+            2 |           8 | 2004-06-23  | 2004-06-24   |     0.00
+            3 |          15 | 2004-09-02  | 2004-09-12   |     3.99
+            4 |          13 | 2004-09-03  | 2004-09-10   |     2.99
+            5 |           8 | 2004-07-21  | 2004-07-24   |     0.00
+            6 |           3 | 2004-03-13  | 2004-03-17   |     2.99
+            7 |           8 | 2004-06-23  | 2004-06-24   |     0.00
+            8 |          15 | 2004-09-02  | 2004-09-12   |     3.99
+            9 |          13 | 2004-09-03  | 2004-09-10   |     2.99
+           10 |           8 | 2004-07-21  | 2004-07-24   |     0.00
+           11 |           3 | 2004-03-13  | 2004-03-17   |     2.99
+           12 |           8 | 2004-06-23  | 2004-06-24   |     0.00
+           13 |          15 | 2004-09-02  | 2004-09-12   |     3.99
+           14 |          13 | 2004-09-03  | 2004-09-10   |     2.99
+           15 |           8 | 2004-07-21  | 2004-07-24   |     0.00
+(15 rows)
+
+
+bpsimple=> select * from orderline;
+ orderinfo_id | item_id | quantity
+--------------+---------+----------
+            1 |       4 |        1
+            1 |       7 |        1
+            1 |       9 |        1
+            2 |       1 |        1
+            2 |      10 |        1
+            2 |       7 |        2
+            2 |       4 |        2
+            3 |       2 |        1
+            3 |       1 |        1
+            4 |       5 |        2
+            5 |       1 |        1
+            5 |       3 |        1
+(12 rows)
+
+
+bpsimple=> select * from stock;
+ item_id | quantity
+---------+----------
+       1 |       12
+       2 |        2
+       4 |        8
+       5 |        3
+       7 |        8
+       8 |       18
+      10 |        1
+(7 rows)
+
+
+bpsimple=> select distinct item.description from customer, orderinfo, orderline, item where customer.customer_id = orderinfo.customer_id and orderinfo.orderinfo_id = orderline.orderinfo_id and orderline.item_id = item.item_id and customer.fname = 'Ann' and customer.lname = 'Stones' order by item.description;
+ description
+-------------
+ Carrier Bag
+ Fan Large
+ Linux CD
+ Tissues
+ Wood Puzzle
+(5 rows)
+
+
+
+bpsimple=> select item.description from customer, orderinfo, orderline, item where customer.customer_id = orderinfo.customer_id and orderinfo.orderinfo_id = orderline.orderinfo_id and orderline.item_id = item.item_id and customer.fname = 'Ann';
+ description
+-------------
+ Wood Puzzle
+ Tissues
+ Fan Large
+ Carrier Bag
+ Wood Puzzle
+ Linux CD
+(6 rows)
+
+
+
+bpsimple=> SELECT * FROM orderinfo WHERE date_part('month',date_placed)=9;
+ orderinfo_id | customer_id | date_placed | date_shipped | shipping
+--------------+-------------+-------------+--------------+----------
+            3 |          15 | 2004-09-02  | 2004-09-12   |     3.99
+            4 |          13 | 2004-09-03  | 2004-09-10   |     2.99
+            8 |          15 | 2004-09-02  | 2004-09-12   |     3.99
+            9 |          13 | 2004-09-03  | 2004-09-10   |     2.99
+           13 |          15 | 2004-09-02  | 2004-09-12   |     3.99
+           14 |          13 | 2004-09-03  | 2004-09-10   |     2.99
+(6 rows)
+
+
+
+bpsimple=> SELECT * FROM orderinfo WHERE date_part('day',date_shipped)=12;
+ orderinfo_id | customer_id | date_placed | date_shipped | shipping
+--------------+-------------+-------------+--------------+----------
+            3 |          15 | 2004-09-02  | 2004-09-12   |     3.99
+            8 |          15 | 2004-09-02  | 2004-09-12   |     3.99
+           13 |          15 | 2004-09-02  | 2004-09-12   |     3.99
+(3 rows)
+
+
+bpsimple=> select * from orderinfo where date_placed >= cast('2003 01 01' AS date);
+ orderinfo_id | customer_id | date_placed | date_shipped | shipping
+--------------+-------------+-------------+--------------+----------
+            1 |           3 | 2004-03-13  | 2004-03-17   |     2.99
+            2 |           8 | 2004-06-23  | 2004-06-24   |     0.00
+            3 |          15 | 2004-09-02  | 2004-09-12   |     3.99
+            4 |          13 | 2004-09-03  | 2004-09-10   |     2.99
+            5 |           8 | 2004-07-21  | 2004-07-24   |     0.00
+            6 |           3 | 2004-03-13  | 2004-03-17   |     2.99
+            7 |           8 | 2004-06-23  | 2004-06-24   |     0.00
+            8 |          15 | 2004-09-02  | 2004-09-12   |     3.99
+            9 |          13 | 2004-09-03  | 2004-09-10   |     2.99
+           10 |           8 | 2004-07-21  | 2004-07-24   |     0.00
+           11 |           3 | 2004-03-13  | 2004-03-17   |     2.99
+           12 |           8 | 2004-06-23  | 2004-06-24   |     0.00
+           13 |          15 | 2004-09-02  | 2004-09-12   |     3.99
+           14 |          13 | 2004-09-03  | 2004-09-10   |     2.99
+           15 |           8 | 2004-07-21  | 2004-07-24   |     0.00
+(15 rows)
+
+
+
+bpsimple=> SELECT DISTINCT town FROM customer WHERE town BETWEEN 'B' AND 'Nz';
+   town
+----------
+ Bingham
+ Hightown
+ Histon
+ Lowtown
+ Milltown
+ Nicetown
+(6 rows)
+
+
+bpsimple=> SELECT DISTINCT town FROM customer WHERE town BETWEEN 'B' AND 'L';
+   town
+----------
+ Bingham
+ Hightown
+ Histon
+(3 rows)
+
+
+
+bpsimple=> SELECT fname, lname FROM customer WHERE fname LIKE '_o%';
+  fname   |  lname
+----------+----------
+ Mohammed | Abdullah
+(1 row)
+
+
+
+postgres=> alter table customer1 RENAME TO customer;
+ERROR:  must be owner of table customer1
+postgres=> \c postgres postgres
+Password for user postgres:
+You are now connected to database "postgres" as user "postgres".
+postgres=# alter table customer1 RENAME TO customer;
+ALTER TABLE
+
+
+bpsimple=> select * from pg_language;
+  oid  | lanname  | lanowner | lanispl | lanpltrusted | lanplcallfoid | laninline | lanvalidator | lanacl
+-------+----------+----------+---------+--------------+---------------+-----------+--------------+--------
+    12 | internal |       10 | f       | f            |             0 |         0 |         2246 |
+    13 | c        |       10 | f       | f            |             0 |         0 |         2247 |
+    14 | sql      |       10 | f       | t            |             0 |         0 |         2248 |
+ 13539 | plpgsql  |       10 | t       | t            |         13536 |     13537 |        13538 |
+(4 rows)
+
+
+
+bpsimple=> create function geom_avg(first integer, second integer) returns float8 as $$
+bpsimple$> begin
+bpsimple$> return sqrt(first * second::float8);
+bpsimple$> end;
+bpsimple$> $$ language plpgsql;
+CREATE FUNCTION
+bpsimple=> create function geom_avg(first integer, second integer) returns float8 as $$ begin return sqrt(first*second::float8); end; $$ language 'plpgsql';
+ERROR:  function "geom_avg" already exists with same argument types
+bpsimple=> create function geom_mul(first integer, second integer) returns float8 as $$ begin return first*second::float8; end; $$ language 'plpgsql';
+CREATE FUNCTION
+
+bpsimple=> geom_mul(2,2);
+ERROR:  syntax error at or near "geom_mul"
+LINE 1: geom_mul(2,2);
+        ^
+bpsimple=> select geom_mul(2,2);
+ geom_mul
+----------
+        4
+(1 row)
+
+bpsimple=> select geom_mul(2,2) into mul_result;
+SELECT 1
+bpsimple=> select mul_result;
+ERROR:  column "mul_result" does not exist
+LINE 1: select mul_result;
+               ^
+bpsimple=> select * from mul_result;
+ geom_mul
+----------
+        4
+(1 row)
