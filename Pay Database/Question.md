@@ -28,7 +28,7 @@ Sample record set for Vendor table
    b. Implement a check constraint for
    - *Vendor_Gender*
    - *Invoice_date* and *invoice_due_date* should be inserted as "30th August 2020"
-   - Implement a check constraint for *vendor_city* Value Set ('TN', 'KA', 'KE', 'AP');
+   - Implement a check constraint for *vendor_state* Value Set ('TN', 'KA', 'KE', 'AP');
    - Implement a check constraint for *vendor_phone* Value as 10 digits.
 
    c. Use Insert command to populate each relation with a minimum of 5 tuples.
