@@ -32,13 +32,11 @@ INSERT 0 5
 (1 row)
 
 ****************** Query 3: Get all pairs of Aeroplane_No from Schedule_Master such that their Departure_City is the same.
- aeroplane_no | aeroplane_no 
---------------+--------------
- K100         | S740
- K200         | A999
- S740         | K100
- A999         | K200
-(4 rows)
+ aeroplane1 | aeroplane2 
+------------+------------
+ K100       | S740
+ A999       | K200
+(2 rows)
 
 ****************** Query 4: Retrieve the minimum and maximum Airfare and the minimum Seats from Flight_Master
  min | max  | min 
@@ -61,8 +59,8 @@ INSERT 0 5
 ****************** Create a procedure to find vowels in a string and count them
 CREATE FUNCTION
 ****************** Call the procedure
-psql:/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Flight Database/solution.sql:101: NOTICE:  Total characters: 142
-psql:/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Flight Database/solution.sql:101: NOTICE:  Total vowels: 48
+psql:/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Flight Database/solution.sql:103: NOTICE:  Total characters: 142
+psql:/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Flight Database/solution.sql:103: NOTICE:  Total vowels: 48
  findvowelscount 
 -----------------
               48
@@ -73,5 +71,5 @@ CREATE FUNCTION
 ****************** Create the trigger on Flight_Master
 CREATE TRIGGER
 ****************** Insert sample data to trigger the FlightMasterInsertTrigger
-psql:/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Flight Database/solution.sql:120: NOTICE:  New record inserted into Flight_Master: Airline_Name=IndiGo, Aeroplane_No=I777, Flight_Date=2023-09-25, Airfare=800, Seats=120
+psql:/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Flight Database/solution.sql:122: NOTICE:  New record inserted into Flight_Master: Airline_Name=IndiGo, Aeroplane_No=I777, Flight_Date=2023-09-25, Airfare=800, Seats=120
 INSERT 0 1

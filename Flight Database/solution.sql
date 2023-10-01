@@ -68,9 +68,11 @@ WHERE SM.Departure_City IN (
 
 
 \echo ****************** Query 3: Get all pairs of Aeroplane_No from Schedule_Master such that their Departure_City is the same.
-SELECT S1.Aeroplane_No, S2.Aeroplane_No
+-- Query to get unique pairs of Aeroplane_No with the same Departure_City
+SELECT DISTINCT LEAST(S1.Aeroplane_No, S2.Aeroplane_No) AS Aeroplane1, GREATEST(S1.Aeroplane_No, S2.Aeroplane_No) AS Aeroplane2
 FROM Schedule_Master S1, Schedule_Master S2
 WHERE S1.Departure_City = S2.Departure_City AND S1.Aeroplane_No <> S2.Aeroplane_No;
+
 
 \echo ****************** Query 4: Retrieve the minimum and maximum Airfare and the minimum Seats from Flight_Master
 SELECT MIN(Airfare), MAX(Airfare), MIN(Seats) FROM Flight_Master;
