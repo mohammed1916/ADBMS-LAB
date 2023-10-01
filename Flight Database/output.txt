@@ -6,12 +6,17 @@ CREATE DATABASE
 template1=# \c flight
 You are now connected to database "flight" as user "mohammedabdullah".
 flight=# \i '/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Flight Database/solution.sql'
+****************** Create Flight_Master table
 CREATE TABLE
+****************** Create Schedule_Master table
 CREATE TABLE
+****************** Implement check constraint for Flight_Date
 ALTER TABLE
+****************** Implement check constraint for Aeroplane_No format
 ALTER TABLE
 INSERT 0 8
 INSERT 0 5
+****************** Query 1: Retrieve Flight_Date from Flight_Master where Airline_Name does not have Departure_City as Delhi in Schedule_Master.
  flight_date 
 -------------
  2018-05-25
@@ -20,11 +25,13 @@ INSERT 0 5
  2018-03-12
 (4 rows)
 
+****************** Query 2: Retrieve Aeroplane_No from Schedule_Master whose departure city is the same as the Aeroplane_No "A999".
  aeroplane_no 
 --------------
  K200
 (1 row)
 
+****************** Query 3: Get all pairs of Aeroplane_No from Schedule_Master such that their Departure_City is the same.
  aeroplane_no | aeroplane_no 
 --------------+--------------
  K100         | S740
@@ -33,11 +40,13 @@ INSERT 0 5
  A999         | K200
 (4 rows)
 
+****************** Query 4: Retrieve the minimum and maximum Airfare and the minimum Seats from Flight_Master
  min | max  | min 
 -----+------+-----
  300 | 1200 |  50
 (1 row)
 
+****************** Query 5: Retrieve Airline_Name and Aeroplane_No from Flight_Master having Airfare > 700 or Seats < 100.
  airline_name | aeroplane_no 
 --------------+--------------
  Kingfisher   | K100
@@ -49,7 +58,9 @@ INSERT 0 5
  Kingfisher   | K200
 (7 rows)
 
+****************** Create a procedure to find vowels in a string and count them
 CREATE FUNCTION
+****************** Call the procedure
 psql:/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Flight Database/solution.sql:101: NOTICE:  Total characters: 142
 psql:/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Flight Database/solution.sql:101: NOTICE:  Total vowels: 48
  findvowelscount 
@@ -57,7 +68,10 @@ psql:/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Flight Databas
               48
 (1 row)
 
+****************** Create a trigger to log Flight_Master inserts
 CREATE FUNCTION
+****************** Create the trigger on Flight_Master
 CREATE TRIGGER
+****************** Insert sample data to trigger the FlightMasterInsertTrigger
 psql:/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Flight Database/solution.sql:120: NOTICE:  New record inserted into Flight_Master: Airline_Name=IndiGo, Aeroplane_No=I777, Flight_Date=2023-09-25, Airfare=800, Seats=120
 INSERT 0 1

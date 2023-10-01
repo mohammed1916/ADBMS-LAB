@@ -1,4 +1,4 @@
--- Create Flight_Master table
+\echo ****************** Create Flight_Master table
 CREATE TABLE Flight_Master (
     Airline_Name VARCHAR(255),
     Aeroplane_No VARCHAR(5) CHECK (Aeroplane_No ~ '[A-Za-z]{1}\d{3}'),
@@ -7,7 +7,7 @@ CREATE TABLE Flight_Master (
     Seats INT
 );
 
--- Create Schedule_Master table
+\echo ****************** Create Schedule_Master table
 CREATE TABLE Schedule_Master (
     Airline_Name VARCHAR(255),
     Aeroplane_No VARCHAR(5),
@@ -17,10 +17,10 @@ CREATE TABLE Schedule_Master (
     Distance INT
 );
 
--- Implement check constraint for Flight_Date
+\echo ****************** Implement check constraint for Flight_Date
 ALTER TABLE Flight_Master ADD CONSTRAINT Flight_Date_Check CHECK (Flight_Date IS NOT NULL);
 
--- Implement check constraint for Aeroplane_No format
+\echo ****************** Implement check constraint for Aeroplane_No format
 ALTER TABLE Flight_Master ADD CONSTRAINT Aeroplane_No_Check CHECK (Aeroplane_No ~ '[A-Za-z]{1}\d{3}');
 
 
@@ -47,7 +47,7 @@ VALUES
 
 
 
--- Query 1: Retrieve Flight_Date from Flight_Master where Airline_Name does not have Departure_City as Delhi in Schedule_Master.
+\echo ****************** Query 1: Retrieve Flight_Date from Flight_Master where Airline_Name does not have Departure_City as Delhi in Schedule_Master.
 SELECT FM.Flight_Date
 FROM Flight_Master FM
 WHERE FM.Airline_Name NOT IN (
@@ -57,7 +57,7 @@ WHERE FM.Airline_Name NOT IN (
 );
 
 
--- Query 2: Retrieve Aeroplane_No from Schedule_Master whose departure city is the same as the Aeroplane_No "A999".
+\echo ****************** Query 2: Retrieve Aeroplane_No from Schedule_Master whose departure city is the same as the Aeroplane_No "A999".
 SELECT SM.Aeroplane_No
 FROM Schedule_Master SM
 WHERE SM.Departure_City IN (
@@ -67,18 +67,18 @@ WHERE SM.Departure_City IN (
 ) AND SM.Aeroplane_No != 'A999';
 
 
--- Query 3: Get all pairs of Aeroplane_No from Schedule_Master such that their Departure_City is the same.
+\echo ****************** Query 3: Get all pairs of Aeroplane_No from Schedule_Master such that their Departure_City is the same.
 SELECT S1.Aeroplane_No, S2.Aeroplane_No
 FROM Schedule_Master S1, Schedule_Master S2
 WHERE S1.Departure_City = S2.Departure_City AND S1.Aeroplane_No <> S2.Aeroplane_No;
 
--- Query 4: Retrieve the minimum and maximum Airfare and the minimum Seats from Flight_Master
+\echo ****************** Query 4: Retrieve the minimum and maximum Airfare and the minimum Seats from Flight_Master
 SELECT MIN(Airfare), MAX(Airfare), MIN(Seats) FROM Flight_Master;
 
--- Query 5: Retrieve Airline_Name and Aeroplane_No from Flight_Master having Airfare > 700 or Seats < 100.
+\echo ****************** Query 5: Retrieve Airline_Name and Aeroplane_No from Flight_Master having Airfare > 700 or Seats < 100.
 SELECT Airline_Name, Aeroplane_No FROM Flight_Master WHERE Airfare > 700 OR Seats < 100;
 
--- Create a procedure to find vowels in a string and count them
+\echo ****************** Create a procedure to find vowels in a string and count them
 CREATE OR REPLACE FUNCTION FindVowelsCount(input_string TEXT) RETURNS INTEGER AS $$
 DECLARE
     vowel_count INTEGER := 0;
@@ -97,10 +97,10 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- Call the procedure
+\echo ****************** Call the procedure
 SELECT FindVowelsCount('In the relational model, data are represented in a tabular form which is called, relation (table), and they are associated with relationships.');
 
--- Create a trigger to log Flight_Master inserts
+\echo ****************** Create a trigger to log Flight_Master inserts
 CREATE OR REPLACE FUNCTION FlightMasterInsertTrigger() RETURNS TRIGGER AS $$
 BEGIN
     RAISE NOTICE 'New record inserted into Flight_Master: Airline_Name=%, Aeroplane_No=%, Flight_Date=%, Airfare=%, Seats=%',
@@ -109,12 +109,12 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- Create the trigger on Flight_Master
+\echo ****************** Create the trigger on Flight_Master
 CREATE TRIGGER Flight_Master_Insert
 AFTER INSERT ON Flight_Master
 FOR EACH ROW
 EXECUTE FUNCTION FlightMasterInsertTrigger();
 
--- Insert sample data to trigger the FlightMasterInsertTrigger
+\echo ****************** Insert sample data to trigger the FlightMasterInsertTrigger
 INSERT INTO Flight_Master (Airline_Name, Aeroplane_No, Flight_Date, Airfare, Seats)
 VALUES ('IndiGo', 'I777', '2023-09-25', 800, 120);
