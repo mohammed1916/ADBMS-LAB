@@ -1,0 +1,78 @@
+template1=# drop database pay;                                                                                                                                                                                     create database pay;
+DROP DATABASE
+CREATE DATABASE
+template1=# \c pay
+You are now connected to database "pay" as user "mohammedabdullah".
+pay=# \i '/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Pay Database/solution.sql'
+************* CREATE: Vendor table
+CREATE TABLE
+************* CREATE: Invoice table
+CREATE TABLE
+************* INSERT: sample data into Vendor table
+INSERT 0 7
+************* INSERT: sample data into Invoice table
+INSERT 0 5
+************* QUERY 1: Get the details of female vendors.
+ vendor_id | vendor_name  | vendor_gender | vendor_city | vendor_state | vendor_phone 
+-----------+--------------+---------------+-------------+--------------+--------------
+        32 | Kun-Hyundai  | F             | Chennai     | TN           | 9330012323
+        35 | Honda Civic  | F             | Mumbai      | KA           | 9330312345
+        38 | Ford Mustang | F             | Chennai     | TN           | 9876543210
+(3 rows)
+
+************* QUERY 2: Get the details of vendors whose names contain the substring "AN".
+ vendor_id |  vendor_name  | vendor_gender | vendor_city | vendor_state | vendor_phone 
+-----------+---------------+---------------+-------------+--------------+--------------
+        36 | Nissan Altima | M             | Kolkata     | KE           | 9330412345
+        37 | Nissan        | M             | Chennai     | TN           | 1234567890
+        38 | Ford Mustang  | F             | Chennai     | TN           | 9876543210
+(3 rows)
+
+************* QUERY 3: Get the name, city, and state of each vendor who is located in the same city and state.
+ vendor_name  | vendor_city | vendor_state 
+--------------+-------------+--------------
+ Ford Mustang | Chennai     | TN
+ Kun-Hyundai  | Chennai     | TN
+ Nissan       | Chennai     | TN
+(3 rows)
+
+************* QUERY 4: Get the details of vendors who are not located in Tamil Nadu.
+ vendor_id |     vendor_name     | vendor_gender | vendor_city | vendor_state | vendor_phone 
+-----------+---------------------+---------------+-------------+--------------+--------------
+        33 | Toyota Camry        | M             | Bangalore   | KA           | 9330112345
+        34 | Chevrolet Silverado | M             | Hyderabad   | AP           | 9330212345
+        35 | Honda Civic         | F             | Mumbai      | KA           | 9330312345
+        36 | Nissan Altima       | M             | Kolkata     | KE           | 9330412345
+(4 rows)
+
+************* QUERY 5: Retrieve the details of invoices for a range of invoice dates.
+ invoice_id | vendor_id | invoice_number | invoice_date | invoice_total | payment_total | credit_total | invoice_due_date | payment_date 
+------------+-----------+----------------+--------------+---------------+---------------+--------------+------------------+--------------
+          1 |        34 | ABA-100        | 2020-08-30   |         14000 |         15000 |            0 | 2020-08-30       | 
+          2 |        35 | XYZ-200        | 2020-08-30   |         12000 |         13000 |            0 | 2020-08-30       | 
+          3 |        36 | PQR-300        | 2020-08-30   |         16000 |         17000 |            0 | 2020-08-30       | 
+          4 |        37 | LMN-400        | 2020-08-30   |         20000 |         21000 |            0 | 2020-08-30       | 
+          5 |        38 | JKL-500        | 2020-08-30   |         18000 |         19000 |            0 | 2020-08-30       | 
+(5 rows)
+
+************* Procedure: to check if a string is palindrome or not (Query 3).
+CREATE FUNCTION
+************* USAGE of PL/SQL procedure to check for a palindrome
+ checkpalindrome 
+-----------------
+ t
+(1 row)
+
+ checkpalindrome 
+-----------------
+ f
+(1 row)
+
+************* Procedure: to find invoices with payment total greater than the average payment total (Query 4).
+CREATE FUNCTION
+************* USAGE of FindInvoicesWithGreaterPayment() procedure
+ invoice_id | invoice_total 
+------------+---------------
+          4 |         20000
+          5 |         18000
+(2 rows)

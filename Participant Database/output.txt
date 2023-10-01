@@ -1,0 +1,73 @@
+template1=# \c event
+You are now connected to database "event" as user "mohammedabdullah".
+event=# \dt
+Did not find any relations.
+event=# \i '/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Participant Database/solution.sql'
+************Create Event Table
+CREATE TABLE
+************Create Participant Details Table
+CREATE TABLE
+************Insert Sample Data into Event Table
+INSERT 0 5
+************Insert Sample Data into Participant Details Table
+INSERT 0 12
+************Implement Check Constraint for Start Date and End Date
+psql:/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Participant Database/solution.sql:44: ERROR:  check constraint "start_end_check" of relation "event" is violated by some row
+************Implement Check Constraint for No_Participants (two-digit number)
+ALTER TABLE
+************Queries
+************a) Arrange the event table entries in decreasing order based on duration.
+ event_id |   event_name    | start_date |  end_date  | duration 
+----------+-----------------+------------+------------+----------
+        2 | Solo dance      | 2019-05-02 | 2019-05-07 |        6
+        4 | Skit            | 2019-05-02 | 2019-05-07 |        6
+        1 | Solo singing    | 2019-05-02 | 2019-05-05 |        4
+        5 | Stand-up Comedy | 2019-05-03 | 2019-05-05 |        3
+        3 | Debate          | 2019-05-03 | 2019-05-02 |        1
+(5 rows)
+
+************b) Display the average participants who have attended the event of the artist Nur.
+ average_participants 
+----------------------
+  27.5000000000000000
+(1 row)
+
+************c) Display the event ID which has the maximum number of participants of the artist Jr. KG.
+ event_id 
+----------
+        1
+        2
+        4
+(3 rows)
+
+************d) Get artist IDs who have performed at least three events.
+ artist_name 
+-------------
+ JrKG
+ NUR
+(2 rows)
+
+************e) Get event IDs that have performed events on the same date.
+ event_date | event_ids  
+------------+------------
+ 2019-05-02 | 1, 2, 4, 3
+ 2019-05-03 | 3, 5
+ 2019-05-07 | 2, 4
+ 2019-05-05 | 1, 5
+(4 rows)
+
+************PL/SQL Procedure
+************Create a PL/SQL Procedure to Accept Start Date and End Date and Print Event IDs
+CREATE PROCEDURE
+************Usage of the Procedure
+psql:/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Participant Database/solution.sql:117: INFO:  Event ID: 3
+psql:/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Participant Database/solution.sql:117: INFO:  Event ID: 5
+CALL
+************Trigger
+************Create a Trigger That Writes Event Details
+CREATE FUNCTION
+************Create a Trigger on the Event Table
+CREATE TRIGGER
+CREATE TABLE
+************usage of trigger Event_Insert
+INSERT 0 1
