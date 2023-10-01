@@ -1,0 +1,63 @@
+flight=# \c template1
+You are now connected to database "template1" as user "mohammedabdullah".
+template1=# drop database flight; create database flight;
+DROP DATABASE
+CREATE DATABASE
+template1=# \c flight
+You are now connected to database "flight" as user "mohammedabdullah".
+flight=# \i '/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Flight Database/solution.sql'
+CREATE TABLE
+CREATE TABLE
+ALTER TABLE
+ALTER TABLE
+INSERT 0 8
+INSERT 0 5
+ flight_date 
+-------------
+ 2018-05-25
+ 2019-02-06
+ 2017-05-27
+ 2018-03-12
+(4 rows)
+
+ aeroplane_no 
+--------------
+ K200
+(1 row)
+
+ aeroplane_no | aeroplane_no 
+--------------+--------------
+ K100         | S740
+ K200         | A999
+ S740         | K100
+ A999         | K200
+(4 rows)
+
+ min | max  | min 
+-----+------+-----
+ 300 | 1200 |  50
+(1 row)
+
+ airline_name | aeroplane_no 
+--------------+--------------
+ Kingfisher   | K100
+ Sahara       | SA300
+ Air India    | A999
+ Spice        | SP740
+ Sahara       | SA300
+ Kingfisher   | K100
+ Kingfisher   | K200
+(7 rows)
+
+CREATE FUNCTION
+psql:/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Flight Database/solution.sql:101: NOTICE:  Total characters: 142
+psql:/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Flight Database/solution.sql:101: NOTICE:  Total vowels: 48
+ findvowelscount 
+-----------------
+              48
+(1 row)
+
+CREATE FUNCTION
+CREATE TRIGGER
+psql:/Users/mohammedabdullah/Documents/Development/labs/ADBMS-LAB/Flight Database/solution.sql:120: NOTICE:  New record inserted into Flight_Master: Airline_Name=IndiGo, Aeroplane_No=I777, Flight_Date=2023-09-25, Airfare=800, Seats=120
+INSERT 0 1
