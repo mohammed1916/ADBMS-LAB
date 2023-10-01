@@ -1,4 +1,4 @@
--- 1. Create the tables
+\echo ************* CREATE: Vendor table
 CREATE TABLE Vendor (
     vendor_id INT PRIMARY KEY,
     vendor_name VARCHAR(255),
@@ -8,73 +8,111 @@ CREATE TABLE Vendor (
     vendor_phone CHAR(10) CHECK (LENGTH(vendor_phone) = 10)
 );
 
+\echo ************* CREATE: Invoice table
 CREATE TABLE Invoice (
     invoice_id INT PRIMARY KEY,
-    vendor_id INT REFERENCES Vendor(vendor_id),
+    vendor_id INT,
     invoice_number VARCHAR(255),
-    invoice_date DATE CHECK (invoice_date = '2020-08-30'),
-    invoice_total DECIMAL(10, 2),
-    payment_total DECIMAL(10, 2) DEFAULT 0,
-    credit_total DECIMAL(10, 2) DEFAULT 0,
-    invoice_due_date DATE CHECK (invoice_due_date = '2020-08-30'),
+    invoice_date DATE CHECK (invoice_date = TO_DATE('30th August 2020', 'DDth Month YYYY')),
+    invoice_total INT,
+    payment_total INT DEFAULT 0,
+    credit_total INT DEFAULT 0,
+    invoice_due_date DATE CHECK (invoice_due_date = TO_DATE('30th August 2020', 'DDth Month YYYY')),
     payment_date DATE
 );
 
-INSERT INTO Vendor VALUES   (32, 'Kun-Hyundai', 'M', 'Chennai','TN','8765432109'),
-                            (34, 'XYZ Motors', 'M', 'Hyderabad','TN', '7654321098'),
-                            (35, 'Tech Solutions', 'F', 'Chennai','TN', '6543210987'),
-                            (36, 'Green Enterprises', 'M', 'Mumbai','TN', '5432109876'),
-                            (37, 'Star Innovations', 'F', 'Hyderabad','TN', '4321098765'),
-                            (38, 'ABC Electronics', 'M', 'Bangalore','TN', '3210987654');
+\echo ************* INSERT: sample data into Vendor table
+INSERT INTO Vendor (vendor_id, vendor_name, vendor_gender, vendor_city, vendor_state, vendor_phone)
+VALUES
+    (32, 'Kun-Hyundai', 'F', 'Chennai', 'TN', '9330012323'),
+    (33, 'Toyota Camry', 'M', 'Bangalore', 'KA', '9330112345'),
+    (34, 'Chevrolet Silverado', 'M', 'Hyderabad', 'AP', '9330212345'),
+    (35, 'Honda Civic', 'F', 'Mumbai', 'KA', '9330312345'),
+    (36, 'Nissan Altima', 'M', 'Kolkata', 'KE', '9330412345'),
+    (37, 'Nissan', 'M', 'Chennai', 'TN', '1234567890'),
+    (38, 'Ford Mustang', 'F', 'Chennai', 'TN', '9876543210');
 
 
-INSERT INTO Invoice VALUES
-    (1, 34, 'ABA-100', '2020-08-30', 14000, 0, 0, '2020-08-30', NULL),
-    (2, 33, 'XYZ-200', '2020-07-15', 12500, 0, 0, '2020-08-30', NULL),
-    (3, 34, 'ABA-101', '2020-09-10', 18500, 0, 0, '2020-08-30', NULL),
-    (4, 35, 'PQR-300', '2020-06-25', 9500, 0, 0, '2020-08-30', NULL),
-    (5, 36, 'DEF-201', '2020-08-05', 13500, 0, 0, '2020-08-30', NULL),
-    (6, 37, 'GHI-400', '2020-07-20', 10500, 0, 0, '2020-08-30', NULL);
+\echo ************* INSERT: sample data into Invoice table
+INSERT INTO Invoice (invoice_id, vendor_id, invoice_number, invoice_date, invoice_total, payment_total, invoice_due_date)
+VALUES
+    (1, 34, 'ABA-100', '2020-08-30', 14000, 15000, '2020-08-30'),
+    (2, 35, 'XYZ-200', '2020-08-30', 12000, 13000, '2020-08-30'),
+    (3, 36, 'PQR-300', '2020-08-30', 16000, 17000, '2020-08-30'),
+    (4, 37, 'LMN-400', '2020-08-30', 20000, 21000, '2020-08-30'),
+    (5, 38, 'JKL-500', '2020-08-30', 18000, 19000, '2020-08-30');
 
 
--- 3. Queries
--- a. Get the details of female vendors
+
+
+\echo ************* QUERY 1: Get the details of female vendors.
 SELECT * FROM Vendor WHERE vendor_gender = 'F';
 
--- b. Get the details of vendors whose name has a substring of "AN"
-SELECT * FROM Vendor WHERE vendor_name LIKE '%AN%';
+\echo ************* QUERY 2: Get the details of vendors whose names contain the substring "AN".
+SELECT * FROM Vendor WHERE LOWER(vendor_name) LIKE '%an%';
 
--- c. Get the name, city, and state of vendors located in the same city and state
-SELECT vendor_name, vendor_city, vendor_state
-FROM Vendor
-GROUP BY vendor_name, vendor_city, vendor_state
-HAVING COUNT(*) > 1;
+\echo ************* QUERY 3: Get the name, city, and state of each vendor who is located in the same city and state.
+SELECT DISTINCT
+    v1.vendor_name,
+    v1.vendor_city,
+    v1.vendor_state 
+FROM
+    Vendor v1
+INNER JOIN
+    Vendor v2
+ON
+    v1.vendor_id <> v2.vendor_id
+    AND v1.vendor_state = v2.vendor_state
+    AND v1.vendor_city = v2.vendor_city;
 
--- d. Get the details of vendors who do not belong to Tamilnadu
-SELECT * FROM Vendor WHERE vendor_state != 'TN';
 
--- e. Retrieve the details of invoices within a date range
-SELECT * FROM Invoice WHERE invoice_date BETWEEN '2019-01-01' AND '2020-10-01';
 
--- 4. PL/SQL Procedure to check if a string is palindrome
-CREATE OR REPLACE FUNCTION IsPalindrome(str VARCHAR2) RETURN BOOLEAN AS
-    reversed_str VARCHAR2(255);
+\echo ************* QUERY 4: Get the details of vendors who are not located in Tamil Nadu.
+SELECT * FROM Vendor WHERE vendor_state <> 'TN';
+
+\echo ************* QUERY 5: Retrieve the details of invoices for a range of invoice dates.
+SELECT * FROM Invoice
+WHERE invoice_date BETWEEN TO_DATE('1st January 2019', 'DDth Month YYYY') AND TO_DATE('1st October 2020', 'DDth Month YYYY');
+
+\echo ************* Procedure: to check if a string is palindrome or not (Query 3).
+CREATE OR REPLACE FUNCTION CheckPalindrome(p_str VARCHAR) RETURNS BOOLEAN AS $$
+DECLARE
+    len INT;
+    i INT;
 BEGIN
-    reversed_str := REVERSE(str);
-    IF str = reversed_str THEN
-        RETURN TRUE;
-    ELSE
-        RETURN FALSE;
-    END IF;
-END IsPalindrome;
-
--- 5. PL/SQL Procedure to find invoices with payment total greater than average
-CREATE OR REPLACE PROCEDURE FindInvoicesWithHigherPayment IS
-    avg_payment DECIMAL(10, 2);
-BEGIN
-    SELECT AVG(payment_total) INTO avg_payment FROM Invoice WHERE payment_total > 0;
-
-    FOR invoice_rec IN (SELECT invoice_id, invoice_total FROM Invoice WHERE payment_total > avg_payment) LOOP
-        DBMS_OUTPUT.PUT_LINE('Invoice ID: ' || invoice_rec.invoice_id || ', Invoice Total: ' || invoice_rec.invoice_total);
+    len := LENGTH(p_str);
+    FOR i IN 1..len/2 LOOP
+        IF SUBSTRING(p_str FROM i FOR 1) <> SUBSTRING(p_str FROM len - i + 1 FOR 1) THEN
+            RETURN FALSE;
+        END IF;
     END LOOP;
-END FindInvoicesWithHigherPayment;
+    RETURN TRUE;
+END;
+$$ LANGUAGE plpgsql;
+
+
+\echo ************* USAGE of PL/SQL procedure to check for a palindrome
+SELECT CheckPalindrome('radar');
+SELECT CheckPalindrome('hello');
+
+\echo ************* Procedure: to find invoices with payment total greater than the average payment total (Query 4).
+CREATE OR REPLACE FUNCTION FindInvoicesWithGreaterPayment() RETURNS TABLE (
+    invoice_id INT,
+    invoice_total NUMERIC
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT i.invoice_id, i.invoice_total::NUMERIC
+    FROM Invoice i
+    WHERE i.payment_total > (
+        SELECT AVG(payment_total)
+        FROM Invoice
+        WHERE payment_total > 0
+    );
+END;
+$$ LANGUAGE plpgsql;
+
+\echo ************* USAGE of FindInvoicesWithGreaterPayment() procedure
+SELECT * FROM FindInvoicesWithGreaterPayment();
+
+
