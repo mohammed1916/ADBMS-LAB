@@ -40,4 +40,8 @@ CREATE VIEW STUDATA AS
     GROUP BY
         E.ROLLNO, S.NAME;
 
+<<<<<<< HEAD
 SELECT * FROM STUDATA;
+=======
+SELECT * FROM STUDATA;
+>>>>>>> c858f98 (coe updated)
