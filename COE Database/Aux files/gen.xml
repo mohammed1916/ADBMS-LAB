@@ -1,0 +1,1222 @@
+<table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <row>
+    <bcode>101</bcode>
+    <bname>COMPUTER SCIENCE</bname>
+    <dno>1</dno>
+  </row>
+
+  <row>
+    <bcode>102</bcode>
+    <bname>MATHEMATICS</bname>
+    <dno>2</dno>
+  </row>
+
+  <row>
+    <bcode>103</bcode>
+    <bname>PHYSICS</bname>
+    <dno>3</dno>
+  </row>
+
+  <row>
+    <bcode>104</bcode>
+    <bname>CHEMISTRY</bname>
+    <dno>4</dno>
+  </row>
+
+  <row>
+    <bcode>105</bcode>
+    <bname>INFORMATION TECHNOLOGY</bname>
+    <dno>5</dno>
+  </row>
+
+  <row>
+    <bcode>106</bcode>
+    <bname>CIVIL</bname>
+    <dno>6</dno>
+  </row>
+
+  <row>
+    <bcode>107</bcode>
+    <bname>IT AI</bname>
+    <dno>5</dno>
+  </row>
+
+  <row>
+    <bcode>108</bcode>
+    <bname>IT BIG DATA</bname>
+    <dno>5</dno>
+  </row>
+
+  <row>
+    <bcode>109</bcode>
+    <bname>IT DS</bname>
+    <dno>5</dno>
+  </row>
+
+  <row>
+    <bcode>110</bcode>
+    <bname>SOIL AND SURVEY</bname>
+    <dno>6</dno>
+  </row>
+
+</table>
+
+
+<table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <row>
+    <ccode>1001</ccode>
+    <cname>WEB PROGRAMMING</cname>
+    <credits>2</credits>
+    <dno>1</dno>
+  </row>
+
+  <row>
+    <ccode>1002</ccode>
+    <cname>COMPUTER GRAPHICS</cname>
+    <credits>3</credits>
+    <dno>1</dno>
+  </row>
+
+  <row>
+    <ccode>1003</ccode>
+    <cname>COMPUTER NETWORKS</cname>
+    <credits>4</credits>
+    <dno>1</dno>
+  </row>
+
+  <row>
+    <ccode>1004</ccode>
+    <cname>LINEAR ALGEBRA</cname>
+    <credits>2</credits>
+    <dno>2</dno>
+  </row>
+
+  <row>
+    <ccode>1005</ccode>
+    <cname>DISCRETE MATH</cname>
+    <credits>3</credits>
+    <dno>2</dno>
+  </row>
+
+  <row>
+    <ccode>1006</ccode>
+    <cname>STATISTICS</cname>
+    <credits>2</credits>
+    <dno>2</dno>
+  </row>
+
+  <row>
+    <ccode>1007</ccode>
+    <cname>THEORY OF RELATIVITY</cname>
+    <credits>2</credits>
+    <dno>3</dno>
+  </row>
+
+  <row>
+    <ccode>1009</ccode>
+    <cname>NUCLEAR PHYSICS</cname>
+    <credits>3</credits>
+    <dno>3</dno>
+  </row>
+
+  <row>
+    <ccode>1020</ccode>
+    <cname>LINEAR ALGEBRA</cname>
+    <credits>2</credits>
+    <dno>3</dno>
+  </row>
+
+  <row>
+    <ccode>1010</ccode>
+    <cname>INORGANIC CHEMISTRY</cname>
+    <credits>4</credits>
+    <dno>4</dno>
+  </row>
+
+  <row>
+    <ccode>1011</ccode>
+    <cname>ORGANIC CHEMISTRY</cname>
+    <credits>3</credits>
+    <dno>4</dno>
+  </row>
+
+  <row>
+    <ccode>1012</ccode>
+    <cname>THERMODYNAMICS</cname>
+    <credits>2</credits>
+    <dno>4</dno>
+  </row>
+
+  <row>
+    <ccode>1021</ccode>
+    <cname>LINEAR ALGEBRA</cname>
+    <credits>2</credits>
+    <dno>4</dno>
+  </row>
+
+  <row>
+    <ccode>1016</ccode>
+    <cname>STRUCTURAL ENGINEERING</cname>
+    <credits>4</credits>
+    <dno>6</dno>
+  </row>
+
+  <row>
+    <ccode>1017</ccode>
+    <cname>FLUID MECHANICS</cname>
+    <credits>2</credits>
+    <dno>6</dno>
+  </row>
+
+  <row>
+    <ccode>1018</ccode>
+    <cname>SOIL MECHANICS</cname>
+    <credits>2</credits>
+    <dno>6</dno>
+  </row>
+
+  <row>
+    <ccode>1019</ccode>
+    <cname>HIGHWAYS</cname>
+    <credits>2</credits>
+    <dno>6</dno>
+  </row>
+
+  <row>
+    <ccode>1013</ccode>
+    <cname>ARTIFICIAL INTELLIGENCE</cname>
+    <credits>4</credits>
+    <dno>5</dno>
+  </row>
+
+  <row>
+    <ccode>1014</ccode>
+    <cname>ADBMS</cname>
+    <credits>2</credits>
+    <dno>5</dno>
+  </row>
+
+  <row>
+    <ccode>1015</ccode>
+    <cname>ADS</cname>
+    <credits>2</credits>
+    <dno>5</dno>
+  </row>
+
+  <row>
+    <ccode>1022</ccode>
+    <cname>LINEAR ALGEBRA</cname>
+    <credits>2</credits>
+    <dno>7</dno>
+  </row>
+
+  <row>
+    <ccode>1008</ccode>
+    <cname>SEMICONDUCTOR DEVICES</cname>
+    <credits>2</credits>
+    <dno>9</dno>
+  </row>
+
+</table>
+
+
+<table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <row>
+    <bcode>101</bcode>
+    <ccode>1001</ccode>
+    <semester>APRIL 2023</semester>
+  </row>
+
+  <row>
+    <bcode>101</bcode>
+    <ccode>1002</ccode>
+    <semester>NOV 2023</semester>
+  </row>
+
+  <row>
+    <bcode>102</bcode>
+    <ccode>1002</ccode>
+    <semester>NOV 2023</semester>
+  </row>
+
+  <row>
+    <bcode>103</bcode>
+    <ccode>1002</ccode>
+    <semester>NOV 2023</semester>
+  </row>
+
+  <row>
+    <bcode>102</bcode>
+    <ccode>1004</ccode>
+    <semester>APRIL 2023</semester>
+  </row>
+
+  <row>
+    <bcode>101</bcode>
+    <ccode>1003</ccode>
+    <semester>APRIL 2023</semester>
+  </row>
+
+  <row>
+    <bcode>102</bcode>
+    <ccode>1005</ccode>
+    <semester>NOV 2023</semester>
+  </row>
+
+  <row>
+    <bcode>102</bcode>
+    <ccode>1006</ccode>
+    <semester>APRIL 2023</semester>
+  </row>
+
+  <row>
+    <bcode>103</bcode>
+    <ccode>1007</ccode>
+    <semester>APRIL 2023</semester>
+  </row>
+
+  <row>
+    <bcode>103</bcode>
+    <ccode>1008</ccode>
+    <semester>NOV 2023</semester>
+  </row>
+
+  <row>
+    <bcode>103</bcode>
+    <ccode>1009</ccode>
+    <semester>APRIL 2023</semester>
+  </row>
+
+  <row>
+    <bcode>104</bcode>
+    <ccode>1010</ccode>
+    <semester>APRIL 2023</semester>
+  </row>
+
+  <row>
+    <bcode>104</bcode>
+    <ccode>1011</ccode>
+    <semester>NOV 2023</semester>
+  </row>
+
+  <row>
+    <bcode>104</bcode>
+    <ccode>1012</ccode>
+    <semester>APRIL 2023</semester>
+  </row>
+
+  <row>
+    <bcode>105</bcode>
+    <ccode>1001</ccode>
+    <semester>APRIL 2023</semester>
+  </row>
+
+  <row>
+    <bcode>105</bcode>
+    <ccode>1002</ccode>
+    <semester>NOV 2023</semester>
+  </row>
+
+  <row>
+    <bcode>105</bcode>
+    <ccode>1003</ccode>
+    <semester>NOV 2023</semester>
+  </row>
+
+  <row>
+    <bcode>106</bcode>
+    <ccode>1013</ccode>
+    <semester>APRIL 2023</semester>
+  </row>
+
+  <row>
+    <bcode>106</bcode>
+    <ccode>1014</ccode>
+    <semester>APRIL 2023</semester>
+  </row>
+
+  <row>
+    <bcode>106</bcode>
+    <ccode>1015</ccode>
+    <semester>NOV 2023</semester>
+  </row>
+
+</table>
+
+
+<table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <row>
+    <rollno>2023176001</rollno>
+    <name>Mohammed Abdullah</name>
+    <dob>2000-04-03</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>101</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176003</rollno>
+    <name>Sai Kiran</name>
+    <dob>2000-01-13</dob>
+    <gender>M </gender>
+    <doa>2023-04-02</doa>
+    <bcode>101</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176002</rollno>
+    <name>Johnson</name>
+    <dob>2000-08-21</dob>
+    <gender>M </gender>
+    <doa>2023-04-02</doa>
+    <bcode>101</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176004</rollno>
+    <name>ANDREW</name>
+    <dob>2000-04-03</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>101</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176005</rollno>
+    <name>Sai Krishna</name>
+    <dob>2000-04-03</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>101</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176006</rollno>
+    <name>Esha</name>
+    <dob>2000-06-05</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>106</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176007</rollno>
+    <name>Tahir Ahmed</name>
+    <dob>2000-06-12</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>102</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176008</rollno>
+    <name>Hassn Khalid</name>
+    <dob>2000-09-03</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>102</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176009</rollno>
+    <name>Rajesh Kumar</name>
+    <dob>2000-06-13</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>102</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176010</rollno>
+    <name>Sri Krishna</name>
+    <dob>2000-04-03</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>102</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176011</rollno>
+    <name>Rohit</name>
+    <dob>2000-05-14</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>103</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176012</rollno>
+    <name>Eshan</name>
+    <dob>2000-06-05</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>106</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176013</rollno>
+    <name>Rajesh</name>
+    <dob>2000-01-29</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>103</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176014</rollno>
+    <name>Rakesh</name>
+    <dob>2000-07-16</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>103</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176015</rollno>
+    <name>Muthu Annamalai</name>
+    <dob>2000-06-05</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>103</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176016</rollno>
+    <name>Emma Johnson</name>
+    <dob>2000-04-03</dob>
+    <gender>F </gender>
+    <doa>2023-04-24</doa>
+    <bcode>104</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176017</rollno>
+    <name>ANNAMALAI</name>
+    <dob>2000-04-03</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>104</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176018</rollno>
+    <name>Olivia Brown</name>
+    <dob>2000-04-03</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>104</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176019</rollno>
+    <name>Liam Davis</name>
+    <dob>2000-05-11</dob>
+    <gender>M </gender>
+    <doa>2023-04-20</doa>
+    <bcode>105</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176020</rollno>
+    <name>Sophia Wilson</name>
+    <dob>2000-06-12</dob>
+    <gender>F </gender>
+    <doa>2023-04-24</doa>
+    <bcode>105</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176021</rollno>
+    <name>Noah Anderson</name>
+    <dob>2000-09-03</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>105</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176022</rollno>
+    <name>Mia Martinez</name>
+    <dob>2000-06-13</dob>
+    <gender>F </gender>
+    <doa>2023-04-24</doa>
+    <bcode>105</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176023</rollno>
+    <name>Ethan Taylor</name>
+    <dob>2000-04-03</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>105</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176024</rollno>
+    <name>Aiden Harris</name>
+    <dob>2000-05-14</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>106</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176025</rollno>
+    <name>William Brown</name>
+    <dob>2000-03-10</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>106</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176026</rollno>
+    <name>James Anderson</name>
+    <dob>2000-01-29</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>106</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176027</rollno>
+    <name>Ava Martinez</name>
+    <dob>2000-07-16</dob>
+    <gender>F </gender>
+    <doa>2023-04-24</doa>
+    <bcode>106</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176028</rollno>
+    <name>Daniel Clark</name>
+    <dob>2000-06-05</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>106</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176029</rollno>
+    <name>Rahul</name>
+    <dob>2000-03-15</dob>
+    <gender>M </gender>
+    <doa>2023-04-24</doa>
+    <bcode>103</bcode>
+  </row>
+
+  <row>
+    <rollno>2023176030</rollno>
+    <name>Vijay Kumar</name>
+    <dob>2000-05-23</dob>
+    <gender>M </gender>
+    <doa>2023-04-20</doa>
+    <bcode>102</bcode>
+  </row>
+
+</table>
+
+
+<table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <row>
+    <rollno>2023176001</rollno>
+    <ccode>1001</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176001</rollno>
+    <ccode>1002</ccode>
+    <sess>NOV 2023</sess>
+    <grade>A </grade>
+  </row>
+
+  <row>
+    <rollno>2023176001</rollno>
+    <ccode>1003</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176002</rollno>
+    <ccode>1001</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>U </grade>
+  </row>
+
+  <row>
+    <rollno>2023176002</rollno>
+    <ccode>1002</ccode>
+    <sess>NOV 2023</sess>
+    <grade>U </grade>
+  </row>
+
+  <row>
+    <rollno>2023176002</rollno>
+    <ccode>1003</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>U </grade>
+  </row>
+
+  <row>
+    <rollno>2023176003</rollno>
+    <ccode>1001</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>A </grade>
+  </row>
+
+  <row>
+    <rollno>2023176003</rollno>
+    <ccode>1002</ccode>
+    <sess>NOV 2023</sess>
+    <grade>U </grade>
+  </row>
+
+  <row>
+    <rollno>2023176003</rollno>
+    <ccode>1003</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176004</rollno>
+    <ccode>1001</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176004</rollno>
+    <ccode>1002</ccode>
+    <sess>NOV 2023</sess>
+    <grade>U </grade>
+  </row>
+
+  <row>
+    <rollno>2023176004</rollno>
+    <ccode>1003</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176005</rollno>
+    <ccode>1001</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>A </grade>
+  </row>
+
+  <row>
+    <rollno>2023176005</rollno>
+    <ccode>1002</ccode>
+    <sess>NOV 2023</sess>
+    <grade>B</grade>
+  </row>
+
+  <row>
+    <rollno>2023176005</rollno>
+    <ccode>1003</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176006</rollno>
+    <ccode>1004</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176006</rollno>
+    <ccode>1005</ccode>
+    <sess>NOV 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176006</rollno>
+    <ccode>1006</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176007</rollno>
+    <ccode>1004</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>O </grade>
+  </row>
+
+  <row>
+    <rollno>2023176007</rollno>
+    <ccode>1005</ccode>
+    <sess>NOV 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176007</rollno>
+    <ccode>1006</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176008</rollno>
+    <ccode>1004</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176008</rollno>
+    <ccode>1005</ccode>
+    <sess>NOV 2023</sess>
+    <grade>O </grade>
+  </row>
+
+  <row>
+    <rollno>2023176008</rollno>
+    <ccode>1006</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176009</rollno>
+    <ccode>1004</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176009</rollno>
+    <ccode>1005</ccode>
+    <sess>NOV 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176009</rollno>
+    <ccode>1006</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>A </grade>
+  </row>
+
+  <row>
+    <rollno>2023176010</rollno>
+    <ccode>1004</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176010</rollno>
+    <ccode>1005</ccode>
+    <sess>NOV 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176010</rollno>
+    <ccode>1006</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176011</rollno>
+    <ccode>1007</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176011</rollno>
+    <ccode>1008</ccode>
+    <sess>NOV 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176011</rollno>
+    <ccode>1009</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176012</rollno>
+    <ccode>1007</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176012</rollno>
+    <ccode>1008</ccode>
+    <sess>NOV 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176012</rollno>
+    <ccode>1009</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176013</rollno>
+    <ccode>1007</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176013</rollno>
+    <ccode>1008</ccode>
+    <sess>NOV 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176013</rollno>
+    <ccode>1009</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176014</rollno>
+    <ccode>1007</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176014</rollno>
+    <ccode>1008</ccode>
+    <sess>NOV 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176014</rollno>
+    <ccode>1009</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176015</rollno>
+    <ccode>1007</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B</grade>
+  </row>
+
+  <row>
+    <rollno>2023176015</rollno>
+    <ccode>1008</ccode>
+    <sess>NOV 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176015</rollno>
+    <ccode>1009</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176016</rollno>
+    <ccode>1010</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B</grade>
+  </row>
+
+  <row>
+    <rollno>2023176016</rollno>
+    <ccode>1011</ccode>
+    <sess>NOV 2023</sess>
+    <grade>A </grade>
+  </row>
+
+  <row>
+    <rollno>2023176016</rollno>
+    <ccode>1012</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>O </grade>
+  </row>
+
+  <row>
+    <rollno>2023176017</rollno>
+    <ccode>1010</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176017</rollno>
+    <ccode>1011</ccode>
+    <sess>NOV 2023</sess>
+    <grade>O </grade>
+  </row>
+
+  <row>
+    <rollno>2023176017</rollno>
+    <ccode>1012</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B</grade>
+  </row>
+
+  <row>
+    <rollno>2023176018</rollno>
+    <ccode>1010</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>A </grade>
+  </row>
+
+  <row>
+    <rollno>2023176018</rollno>
+    <ccode>1011</ccode>
+    <sess>NOV 2023</sess>
+    <grade>B</grade>
+  </row>
+
+  <row>
+    <rollno>2023176018</rollno>
+    <ccode>1012</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>U </grade>
+  </row>
+
+  <row>
+    <rollno>2023176019</rollno>
+    <ccode>1001</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176019</rollno>
+    <ccode>1002</ccode>
+    <sess>NOV 2023</sess>
+    <grade>B</grade>
+  </row>
+
+  <row>
+    <rollno>2023176019</rollno>
+    <ccode>1003</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176020</rollno>
+    <ccode>1001</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B</grade>
+  </row>
+
+  <row>
+    <rollno>2023176020</rollno>
+    <ccode>1002</ccode>
+    <sess>NOV 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176020</rollno>
+    <ccode>1003</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176021</rollno>
+    <ccode>1001</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176021</rollno>
+    <ccode>1002</ccode>
+    <sess>NOV 2023</sess>
+    <grade>U </grade>
+  </row>
+
+  <row>
+    <rollno>2023176021</rollno>
+    <ccode>1003</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B</grade>
+  </row>
+
+  <row>
+    <rollno>2023176022</rollno>
+    <ccode>1001</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>U </grade>
+  </row>
+
+  <row>
+    <rollno>2023176022</rollno>
+    <ccode>1002</ccode>
+    <sess>NOV 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176022</rollno>
+    <ccode>1003</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B</grade>
+  </row>
+
+  <row>
+    <rollno>2023176023</rollno>
+    <ccode>1001</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>A</grade>
+  </row>
+
+  <row>
+    <rollno>2023176023</rollno>
+    <ccode>1002</ccode>
+    <sess>NOV 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176023</rollno>
+    <ccode>1003</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176024</rollno>
+    <ccode>1013</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>A </grade>
+  </row>
+
+  <row>
+    <rollno>2023176024</rollno>
+    <ccode>1014</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>U </grade>
+  </row>
+
+  <row>
+    <rollno>2023176024</rollno>
+    <ccode>1015</ccode>
+    <sess>NOV 2023</sess>
+    <grade>U </grade>
+  </row>
+
+  <row>
+    <rollno>2023176025</rollno>
+    <ccode>1013</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176025</rollno>
+    <ccode>1014</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176025</rollno>
+    <ccode>1015</ccode>
+    <sess>NOV 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176026</rollno>
+    <ccode>1013</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B</grade>
+  </row>
+
+  <row>
+    <rollno>2023176026</rollno>
+    <ccode>1014</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176026</rollno>
+    <ccode>1015</ccode>
+    <sess>NOV 2023</sess>
+    <grade>B</grade>
+  </row>
+
+  <row>
+    <rollno>2023176027</rollno>
+    <ccode>1013</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176027</rollno>
+    <ccode>1014</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B</grade>
+  </row>
+
+  <row>
+    <rollno>2023176027</rollno>
+    <ccode>1015</ccode>
+    <sess>NOV 2023</sess>
+    <grade>A </grade>
+  </row>
+
+  <row>
+    <rollno>2023176028</rollno>
+    <ccode>1013</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B </grade>
+  </row>
+
+  <row>
+    <rollno>2023176028</rollno>
+    <ccode>1014</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>B</grade>
+  </row>
+
+  <row>
+    <rollno>2023176028</rollno>
+    <ccode>1015</ccode>
+    <sess>NOV 2023</sess>
+    <grade>U </grade>
+  </row>
+
+  <row>
+    <rollno>2023176001</rollno>
+    <ccode>1020</ccode>
+    <sess>APRIL 2023</sess>
+    <grade>O </grade>
+  </row>
+
+</table>
